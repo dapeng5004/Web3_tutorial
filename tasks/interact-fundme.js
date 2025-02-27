@@ -37,11 +37,15 @@ task("interact-fundme", "interact with fundme contract")
         console.log("Contract balance after secondAccount fund :", balanceOfContract2.toString())
         console.log("Contract balance after secondAccount fund :", ethers.formatEther(balanceOfContract2))
 
+
         // check mapping of fundersToAmount
         const firstAccountBalance = await fundMe.fundersToAmount(funderAccount1.address)
         const secondAccountBalance = await fundMe.fundersToAmount(funderAccount2.address)
         console.log("First account balance:", firstAccountBalance.toString())
+        console.log("First account balance:", ethers.formatEther(firstAccountBalance.toString()))
         console.log("Second account balance:", secondAccountBalance.toString())
+        console.log("Second account balance:", ethers.formatEther(secondAccountBalance.toString()))
+
     })
 
 module.exports = {};
